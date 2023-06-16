@@ -4,7 +4,9 @@ services:
   server:
     build: server
     environment:
-      - DB_CONNECTION_STRING=postgres://postgres:postgres@db:5432/postgres?sslmode=disable
+      - DB_CONNECTION_STRING=postgresql://postgres:postgres@db:5432/postgres?sslmode=disable
+    ports:
+      - 4000:4000
     depends_on:
       - db
   db:

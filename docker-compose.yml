@@ -1,0 +1,16 @@
+version: '3.6'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./html:/usr/share/nginx/html
+    depends_on:
+      - php
+  server:
+    build: server
+    volumes:
+      - ./html:/var/www/html

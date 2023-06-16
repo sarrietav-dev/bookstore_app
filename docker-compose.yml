@@ -6,7 +6,7 @@ services:
     environment:
       - DB_CONNECTION_STRING=postgresql://postgres:postgres@db:5432/postgres?sslmode=disable
     ports:
-      - 4000:4000
+      - 5000:5000
     depends_on:
       - db
   db:

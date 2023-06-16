@@ -27,7 +27,7 @@ RUN npm run build -- --configuration=$build_env
 
 #STEP-2 RUN
 #Defining nginx img
-FROM nginx:1.20 as ngx
+FROM nginx:1.24-alpine as ngx
 
 #copying compiled code from dist to nginx folder for serving
 COPY --from=node-helper /app/dist/client /usr/share/nginx/html

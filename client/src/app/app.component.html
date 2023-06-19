@@ -1,3 +1,37 @@
-<ul>
-  <li *ngFor="let book of books">{{ book.name }} of {{ book.category }}</li>
+<div class="w-full bg-tertiary py-10 border-b-2 border-b-secondary">
+  <h1 class="text-4xl text-center text-primary font-medium pt-10">Book List</h1>
+  <p class="text-center text-secondary">List of books in the library</p>
+  <div class="flex justify-between mt-10">
+    <p class="text-primary flex items-center pl-5">
+      <span class="material-symbols-outlined font-medium mr-3">menu_book</span>
+      <span class="text-lg"> {{ books.length }} books in the library </span>
+    </p>
+    <button
+      class="bg-primary rounded-tl rounded-bl text-tertiary flex justify-center items-center px-5 py-3 active:bg-primary/80 transition"
+    >
+      <span class="material-symbols-outlined font-medium text-tertiary"
+        >add</span
+      >
+      Add one book
+    </button>
+  </div>
+</div>
+<ul class="divide-y-2 divide-secondary last:border-b-2 last:border-b-secondary">
+  <li
+    class="px-5 py-8 flex justify-between items-center"
+    *ngFor="let book of books"
+  >
+    <div>
+      <span class="text-xl text-text block">{{ book.name }}</span>
+      <span class="text-subtext">{{ book.category }}</span>
+    </div>
+    <div class="space-x-5">
+      <span class="material-symbols-outlined font-medium text-primary"
+        >edit</span
+      >
+      <span class="material-symbols-outlined font-medium text-secondary"
+        >delete</span
+      >
+    </div>
+  </li>
 </ul>

@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   books: Book[] = [];
 
   ngOnInit(): void {
-    this.getAllBooks()
+    this.getAllBooks();
   }
 
   getAllBooks(): void {

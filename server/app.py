@@ -2,9 +2,11 @@ from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_restful import Api, Resource
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/books/*": {"origins": "*"}})
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DB_CONNECTION_STRING")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -73,6 +75,8 @@ class ResourceListBooks(Resource):
 
 api.add_resource(ResourceListBooks, '/books')
 api.add_resource(ResourceSingleBook, '/books/<int:book_id>')
+
+
 
 if __name__ == '__main__':
     app.run(port=5000)

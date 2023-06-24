@@ -10,5 +10,5 @@ interface IBookService {
 
   updateBook(book: Book): Observable<Book>;
 
-  deleteBook(id: number): Observable<Book>;
+  deleteBook(id: number): Observable<unknown>;
 }

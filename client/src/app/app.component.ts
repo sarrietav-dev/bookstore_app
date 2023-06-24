@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from './services/book.service';
 import { Book } from './types/Book';
+import { Dialog } from '@angular/cdk/dialog';
+import { CreateBookDialogComponent } from './components/create-book-dialog/create-book-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,7 @@ import { Book } from './types/Book';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private dialog: Dialog) {}
 
   books: Book[] = [];
 
@@ -18,5 +20,9 @@ export class AppComponent implements OnInit {
 
   getAllBooks(): void {
     this.bookService.getBooks().subscribe((books) => (this.books = books));
+  }
+
+  openCreateBookDialog(): void {
+    this.dialog.open(CreateBookDialogComponent);
   }
 }

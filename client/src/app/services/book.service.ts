@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { Book } from '../types/Book';
+import { Book, BookDTO } from '../types/Book';
 import { IBookService } from '../types/book-service';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class BookService implements IBookService {
     return this.http.get<Book>(`${this.URL}/${id}`);
   }
 
-  createBook(book: Book): Observable<Book> {
+  createBook(book: BookDTO): Observable<Book> {
     return this.http.post<Book>(this.URL, book);
   }
 

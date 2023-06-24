@@ -1,0 +1,6 @@
+:host {
+  display: block;
+  padding: 0 16px;
+
+  @apply bg-tertiary rounded p-10;
+}

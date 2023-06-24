@@ -1,12 +1,12 @@
 import { Observable } from 'rxjs';
-import { Book } from './Book';
+import { Book, BookDTO } from './Book';
 
 interface IBookService {
   getBooks(): Observable<Book[]>;
 
   getBook(id: number): Observable<Book>;
 
-  createBook(book: Book): Observable<Book>;
+  createBook(book: BookDTO): Observable<Book>;
 
   updateBook(book: Book): Observable<Book>;
 

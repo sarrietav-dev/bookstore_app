@@ -1,5 +1,7 @@
+export type BookDTO = Omit<Book, 'id'>;
+
 export type Book = {
   id: number;
-  name: string;
+  title: string;
   category: string;
 };

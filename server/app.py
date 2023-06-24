@@ -24,13 +24,13 @@ def create_tables():
 
 class Books(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
+    title = db.Column(db.String(100))
     category = db.Column(db.String(100))
 
 
 class Book_schemathic(ma.Schema):
     class Meta:
-        fields = ("id", "name", "category")
+        fields = ("id", "title", "category")
 
 
 books_schemathic = Book_schemathic()
@@ -45,8 +45,8 @@ class ResourceSingleBook(Resource):
     def put(self, book_id):
         book = Books.query.get_or_404(book_id)
 
-        if 'name' in request.json:
-            book.name = request.json['name']
+        if 'title' in request.json:
+            book.title = request.json['title']
         if 'category' in request.json:
             book.category = request.json['category']
 
@@ -67,7 +67,7 @@ class ResourceListBooks(Resource):
 
     def post(self):
         new_book = Books(
-            name=request.json['name'], category=request.json['category'])
+            title=request.json['title'], category=request.json['category'])
         db.session.add(new_book)
         db.session.commit()
         return books_schemathic.dump([new_book])
@@ -75,7 +75,6 @@ class ResourceListBooks(Resource):
 
 api.add_resource(ResourceListBooks, '/books')
 api.add_resource(ResourceSingleBook, '/books/<int:book_id>')
-
 
 
 if __name__ == '__main__':

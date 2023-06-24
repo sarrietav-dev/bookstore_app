@@ -11,6 +11,7 @@ import { Book } from 'src/app/types/Book';
 })
 export class CreateBookDialogComponent {
   book: Book = {
+    id: this.data?.id ?? undefined,
     title: this.data?.title ?? '',
     category: this.data?.category ?? '',
   };
@@ -23,10 +24,14 @@ export class CreateBookDialogComponent {
 
   onSave(): void {
     if (this.data) {
-      this.service.updateBook(this.book);
+      this.service.updateBook(this.book).subscribe();
+      this.ref.close();
       return;
     }
-    this.service.createBook(this.book);
+    this.service
+      .createBook(this.book)
+      .subscribe({ error: (error) => console.error(error) });
+    this.ref.close();
   }
 
   onCancel(): void {

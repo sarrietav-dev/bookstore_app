@@ -19,6 +19,6 @@ export class BookItemComponent {
   }
 
   onDelete(): void {
-    this.service.deleteBook(this.book.id!);
+    this.service.deleteBook(this.book.id!).subscribe();
   }
 }

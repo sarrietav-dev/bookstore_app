@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IBookService } from '../types/book-service';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Book } from '../types/Book';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 
@@ -17,6 +17,7 @@ export class LocalBookService implements IBookService {
     return this.db.getByID('books', id);
   }
   createBook(book: Book): Observable<Book> {
+    if ("id" in book) delete book.id;
     return this.db.add('books', book);
   }
   updateBook(book: Book): Observable<Book> {

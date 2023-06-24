@@ -16,14 +16,12 @@ export class AppComponent implements OnInit {
   books: Book[] = [];
 
   ngOnInit(): void {
-    this.getAllBooks();
-  }
-
-  getAllBooks(): void {
     this.bookService.getBooks().subscribe((books) => {
       this.books = books;
     });
   }
+
+  getAllBooks(): void {}
 
   openCreateBookDialog(): void {
     this.dialog.open(CreateBookDialogComponent);

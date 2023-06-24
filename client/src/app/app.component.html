@@ -1,3 +1,32 @@
-<ul>
-  <li *ngFor="let book of books">{{ book.name }} of {{ book.category }}</li>
-</ul>
+<div class="mx-auto flex h-screen max-w-4xl flex-col bg-white">
+  <div class="w-full shrink-0 border-b-2 border-b-secondary bg-tertiary py-10">
+    <h1 class="pt-10 text-center text-4xl font-medium text-primary">
+      Book List
+    </h1>
+    <p class="text-center text-secondary">List of books in the library</p>
+    <div class="mt-10 flex justify-between">
+      <p class="flex items-center pl-5 text-primary">
+        <span class="material-symbols-outlined mr-3 font-medium"
+          >menu_book</span
+        >
+        <span class="text-lg"> {{ books.length }} books in the library </span>
+      </p>
+      <button
+        (click)="openCreateBookDialog()"
+        class="flex items-center justify-center rounded-bl rounded-tl bg-primary px-5 py-3 text-tertiary transition active:bg-primary/80"
+      >
+        <span class="material-symbols-outlined font-medium text-tertiary"
+          >add</span
+        >
+        Add one book
+      </button>
+    </div>
+  </div>
+  <ul class="divide-y-2 divide-secondary overflow-auto">
+    <li
+      *ngFor="let book of books"
+    >
+      <app-book-item [book]="book"></app-book-item>
+    </li>
+  </ul>
+</div>

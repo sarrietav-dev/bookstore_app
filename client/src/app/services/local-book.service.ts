@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IBookService } from '../types/book-service';
 import { Observable } from 'rxjs';
-import { Book, BookDTO } from '../types/Book';
+import { Book } from '../types/Book';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class LocalBookService implements IBookService {
   getBook(id: number): Observable<Book> {
     throw new Error('Method not implemented.');
   }
-  createBook(book: BookDTO): Observable<Book> {
+  createBook(book: Book): Observable<Book> {
     throw new Error('Method not implemented.');
   }
   updateBook(book: Book): Observable<Book> {

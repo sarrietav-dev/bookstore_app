@@ -11,7 +11,7 @@ import { LocalBookService } from './services/local-book.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  constructor(private bookService: LocalBookService, private dialog: Dialog) {}
+  constructor(private bookService: BookService, private dialog: Dialog) {}
 
   books: Book[] = [];
 

@@ -17,7 +17,7 @@ export class CreateBookDialogComponent {
   };
 
   constructor(
-    private service: LocalBookService,
+    private service: BookService,
     private ref: DialogRef,
     @Inject(DIALOG_DATA) private data?: Book
   ) {}

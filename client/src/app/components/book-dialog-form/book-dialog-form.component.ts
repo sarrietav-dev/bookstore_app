@@ -6,8 +6,8 @@ import { Book } from 'src/app/types/Book';
 
 @Component({
   selector: 'book-dialog-form',
-  templateUrl: './create-book-dialog.component.html',
-  styleUrls: ['./create-book-dialog.component.css'],
+  templateUrl: './book-dialog-form.component.html',
+  styleUrls: ['./book-dialog-form.component.css'],
 })
 export class BookDialogFormComponent {
   book: Book = {

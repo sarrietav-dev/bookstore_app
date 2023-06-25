@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookItemComponent } from './components/book-item/book-item.component';
-import { CreateBookDialogComponent } from './components/create-book-dialog/create-book-dialog.component';
+import { BookDialogFormComponent } from './components/book-dialog-form/book-dialog-form.component';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from '@angular/cdk/dialog';
 import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
@@ -26,7 +26,7 @@ const dbConfig: DBConfig = {
 };
 
 @NgModule({
-  declarations: [AppComponent, BookItemComponent, CreateBookDialogComponent],
+  declarations: [AppComponent, BookItemComponent, BookDialogFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

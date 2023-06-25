@@ -1,7 +1,7 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { Component, Input } from '@angular/core';
 import { Book } from 'src/app/types/Book';
-import { CreateBookDialogComponent } from '../create-book-dialog/create-book-dialog.component';
+import { BookDialogFormComponent } from '../book-dialog-form/book-dialog-form.component';
 import { LocalBookService } from 'src/app/services/local-book.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class BookItemComponent {
   constructor(private dialog: Dialog, private service: LocalBookService) {}
 
   onEdit(): void {
-    this.dialog.open(CreateBookDialogComponent, { data: this.book });
+    this.dialog.open(BookDialogFormComponent, { data: this.book });
   }
 
   onDelete(): void {

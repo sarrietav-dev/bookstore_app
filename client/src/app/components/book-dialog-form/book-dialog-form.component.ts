@@ -5,11 +5,11 @@ import { LocalBookService } from 'src/app/services/local-book.service';
 import { Book } from 'src/app/types/Book';
 
 @Component({
-  selector: 'app-create-book-dialog',
+  selector: 'book-dialog-form',
   templateUrl: './create-book-dialog.component.html',
   styleUrls: ['./create-book-dialog.component.css'],
 })
-export class CreateBookDialogComponent {
+export class BookDialogFormComponent {
   book: Book = {
     id: this.data?.id ?? undefined,
     title: this.data?.title ?? '',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from './services/book.service';
 import { Book } from './types/Book';
 import { Dialog } from '@angular/cdk/dialog';
-import { CreateBookDialogComponent } from './components/create-book-dialog/create-book-dialog.component';
+import { BookDialogFormComponent } from './components/book-dialog-form/book-dialog-form.component';
 import { LocalBookService } from './services/local-book.service';
 
 @Component({
@@ -24,6 +24,6 @@ export class AppComponent implements OnInit {
   getAllBooks(): void {}
 
   openCreateBookDialog(): void {
-    this.dialog.open(CreateBookDialogComponent);
+    this.dialog.open(BookDialogFormComponent);
   }
 }
